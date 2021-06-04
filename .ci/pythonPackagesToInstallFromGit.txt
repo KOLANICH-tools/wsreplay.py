@@ -1,0 +1,3 @@
+https://github.com/aaugustin/websockets.git
+https://github.com/tomerfiliba/plumbum.git
+https://github.com/amoffat/sh.git
