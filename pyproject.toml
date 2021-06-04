@@ -1,0 +1,46 @@
+[build-system]
+requires = ["setuptools>=61.2.0", "wheel", "setuptools_scm[toml]>=3.4.3"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "wsreplay"
+authors = [{name = "KOLANICH"}]
+description = "Sets up a server that replays WebSocket messages previously captured either with mitmproxy or as HAR"
+readme = "ReadMe.md"
+keywords = ["websocket", "har", "mitmproxy", "replay"]
+license = {text = "Unlicense"}
+classifiers = [
+	"Programming Language :: Python",
+	"Programming Language :: Python :: 3",
+	"Development Status :: 4 - Beta",
+	"Environment :: Other Environment",
+	"Intended Audience :: Developers",
+	"License :: Public Domain",
+	"Operating System :: OS Independent",
+	"Topic :: Software Development :: Libraries :: Python Modules",
+]
+requires-python = ">=3.4"
+dependencies = [
+	"websockets", # @ git+https://github.com/aaugustin/websockets.git
+	"plumbum", # @ git+https://github.com/tomerfiliba/plumbum.git
+]
+dynamic = ["version"]
+
+[project.urls]
+Homepage = "https://codeberg.org/KOLANICH-tools/wsreplay.py"
+
+[project.optional-dependencies]
+tests = ["sh"] # @ git+https://github.com/amoffat/sh.git
+mitmproxy = ["mitmproxy"]
+
+[project.scripts]
+wsreplay = "wsreplay.__main__:CLI.run"
+
+[tool.setuptools]
+zip-safe = true
+include-package-data = false
+
+[tool.setuptools.packages]
+find = {namespaces = false}
+
+[tool.setuptools_scm]
