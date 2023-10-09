@@ -4,9 +4,12 @@ import asyncio
 import typing
 from collections import defaultdict
 from pathlib import Path, PurePath
+from warnings import warn
 
 import websockets.server
 from plumbum import cli
+
+warn("We have moved from M$ GitHub to https://codeberg.org/KOLANICH-tools/wsreplay.py , read why on https://codeberg.org/KOLANICH/Fuck-GuanTEEnomo .")
 
 PathOrStrT = typing.Union[Path, str]
 
